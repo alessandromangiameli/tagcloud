@@ -12,23 +12,61 @@ const Form = ({ onChange, onSubmit, values, isSubmitting, showForm, toggleForm }
       </div>
     )}
     {showForm && (
-      <form className="form-inline">
-        <div className="form-group">
-          <input
-            className="form-control form-control-lg"
-            value={values.body}
-            onChange={onChange}
-            name="body"
-          />
-          <button
-            onClick={onSubmit}
-            disabled={isSubmitting || values.body.length < 3}
-            className="btn btn-success btn-lg"
-          >
-            Invia
-          </button>
-        </div>
-      </form>
+      <Fragment>
+        <section id="contact">
+          <div className="container">
+            <h2 className="text-center text-uppercase text-secondary mb-0">Lorem ipsum</h2>
+            <div className="row">
+              <div className="col-lg-8 mx-auto">
+                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                  <div className="control-group">
+                    <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                      <label>Message*</label>
+                      <textarea
+                        className="form-control"
+                        id="message"
+                        rows="3"
+                        placeholder="Message"
+                        value={values.body}
+                        onChange={onChange}
+                        name="body"
+                      />
+                      <p className="help-block text-danger" />
+                    </div>
+                  </div>
+
+                  <div className="control-group">
+                    <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                      <label>Name</label>
+                      <input
+                        className="form-control"
+                        id="name"
+                        type="text"
+                        placeholder="Name"
+                        value={values.name}
+                        onChange={onChange}
+                      />
+                      <p className="help-block text-danger" />
+                    </div>
+                  </div>
+                  <br />
+                  <div id="success" />
+                  <div className="form-group">
+                    <button
+                      type="submit"
+                      className="btn btn-primary btn-xl"
+                      onClick={onSubmit}
+                      disabled={isSubmitting || values.body.length < 3}
+                    >
+                      Send
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Fragment>
     )}
   </Fragment>
 );
