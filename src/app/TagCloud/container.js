@@ -34,7 +34,7 @@ const TagCloudContainer = () => {
             data={wordCount(posts)}
             fontSizeMapper={fontSizeMapper}
             rotate={rotate}
-            font="Helvetica Neue"
+            font="Montserrat"
           />
         );
       }}

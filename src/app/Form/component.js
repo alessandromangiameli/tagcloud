@@ -15,7 +15,9 @@ const Form = ({ onChange, onSubmit, values, isSubmitting, showForm, toggleForm }
       <Fragment>
         <section id="contact">
           <div className="container">
-            <h2 className="text-center text-uppercase text-secondary mb-0">Lorem ipsum</h2>
+            <h2 className="text-center text-uppercase text-secondary mb-0 pb-5">
+              Qui ci andrebbe la domanda
+            </h2>
             <div className="row">
               <div className="col-lg-8 mx-auto">
                 <form name="sentMessage" id="contactForm" novalidate="novalidate">
@@ -58,7 +60,7 @@ const Form = ({ onChange, onSubmit, values, isSubmitting, showForm, toggleForm }
                       onClick={onSubmit}
                       disabled={isSubmitting || values.body.length < 3}
                     >
-                      Send
+                      Invia
                     </button>
                   </div>
                 </form>

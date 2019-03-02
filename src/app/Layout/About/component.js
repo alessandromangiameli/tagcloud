@@ -2,9 +2,8 @@ import React from 'react';
 
 const About = () => (
   <section className="bg-primary text-white mb-0" id="about">
-    <div className="container">
-      <h2 className="text-center text-uppercase text-white">Lorem ipsum</h2>
-      <hr className="star-light mb-5" />
+    <div className="container mt-5">
+      <h2 className="text-center text-uppercase text-white pb-5 pt-5">Lorem ipsum</h2>
       <div className="row">
         <div className="col-lg-4 ml-auto">
           <p className="lead">
@@ -24,7 +23,7 @@ const About = () => (
       <div className="text-center mt-4">
         <a className="btn btn-xl btn-outline-light" href="#">
           <i className="fas fa-download mr-2" />
-          Download Now!
+          lascia il tuo pensiero
         </a>
       </div>
     </div>
