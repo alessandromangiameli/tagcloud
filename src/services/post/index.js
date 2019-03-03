@@ -13,6 +13,11 @@ export const add = ({ body }, onSuccess) => {
 
 export const getAll = (done) => {
   posts.get().then(({ docs }) => {
-    done({ data: docs.map((doc) => doc.data()) });
+    done({
+      data: docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      })),
+    });
   });
 };

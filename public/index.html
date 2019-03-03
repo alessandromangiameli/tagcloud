@@ -28,7 +28,74 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet" />
+    <link href="css/freelancer.css" rel="stylesheet" />
+
+    <style>
+      .tag-cloud-container {
+        position: relative;
+        height: 300px;
+      }
+      .app-outer {
+        align-items: center;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 0;
+        padding: 20px 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .app-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-width: 1000px;
+        width: 100%;
+      }
+      .tag-cloud {
+        flex: 1;
+      }
+
+      .tag-cloud > div {
+        transition: 1.4s;
+      }
+
+      .tag-item-wrapper {
+        cursor: pointer;
+      }
+
+      .tag-item-wrapper:hover {
+        z-index: 100;
+      }
+
+      .tag-item-wrapper:hover .tag-item-tooltip {
+        display: block;
+      }
+
+      .tag-item-tooltip {
+        background: #c01916;
+        color: white;
+        margin-top: 5px;
+        z-index: 100;
+        display: none;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1;
+        position: absolute;
+        min-width: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+
+      .btn-primary.disabled,
+      .btn-primary:disabled {
+        background-color: #dd3d31;
+        border-color: #dd3d31;
+      }
+    </style>
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -58,6 +125,6 @@
     <!-- Contact Form JavaScript -->
 
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+    <script src="js/freelancer.js"></script>
   </body>
 </html>

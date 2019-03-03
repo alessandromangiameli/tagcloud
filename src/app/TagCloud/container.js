@@ -1,7 +1,7 @@
 import React from 'react';
-import WordCloud from 'react-d3-cloud';
 
-import FetchPost from '../FetchPost';
+import PostContext from '../PostContext';
+import TagCloudComponent from './component';
 
 const wordCount = (posts) => {
   const lookupTable = {};
@@ -13,32 +13,22 @@ const wordCount = (posts) => {
   });
   return Object.keys(lookupTable).map((key) => {
     return {
-      text: key,
-      value: lookupTable[key],
+      word: key,
+      count: lookupTable[key],
     };
   });
 };
 
-const fontSizeMapper = (word) => Math.log2(word.value) * 5 * 10;
-const rotate = (word) => word.value % 360;
-
 const TagCloudContainer = () => {
   return (
-    <FetchPost>
+    <PostContext.Consumer>
       {({ posts, loading }) => {
         if (loading) {
-          return 'loading';
+          return null;
         }
-        return (
-          <WordCloud
-            data={wordCount(posts)}
-            fontSizeMapper={fontSizeMapper}
-            rotate={rotate}
-            font="Montserrat"
-          />
-        );
+        return <TagCloudComponent posts={wordCount(posts)} />;
       }}
-    </FetchPost>
+    </PostContext.Consumer>
   );
 };
 

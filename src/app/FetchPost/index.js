@@ -8,17 +8,21 @@ export default class FetchPost extends React.Component {
   };
 
   componentDidMount() {
+    this.fetch();
+  }
+
+  fetch = () => {
     getAll(({ data }) => {
       this.setState({
         posts: data,
         loading: false,
       });
     });
-  }
+  };
 
   render() {
     const { children } = this.props;
     const { loading, posts } = this.state;
-    return children({ loading, posts });
+    return children({ loading, posts, fetch: this.fetch });
   }
 }

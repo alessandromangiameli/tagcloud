@@ -7,10 +7,12 @@
     "firebase": "^5.8.4",
     "formik": "^1.5.1",
     "prop-types": "^15.7.2",
+    "randomcolor": "^0.5.4",
     "react": "^16.8.3",
     "react-d3-cloud": "^0.7.0",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
+    "react-tag-cloud": "^1.2.0",
     "recompose": "^0.30.0"
   },
   "scripts": {
@@ -27,5 +29,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "firebase-tools": "^6.4.0"
+  }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const About = () => (
-  <section className="bg-primary text-white mb-0" id="about">
+  <section className="bg-primary text-white mb-0" id="iniziativa">
     <div className="container mt-5">
       <h2 className="text-center text-uppercase text-white pb-5 pt-5">Lorem ipsum</h2>
       <div className="row">
@@ -21,7 +21,7 @@ const About = () => (
         </div>
       </div>
       <div className="text-center mt-4">
-        <a className="btn btn-xl btn-outline-light" href="#">
+        <a className="btn btn-xl btn-outline-light js-scroll-trigger" href="#pensiero">
           <i className="fas fa-download mr-2" />
           lascia il tuo pensiero
         </a>
