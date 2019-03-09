@@ -2,7 +2,7 @@ import DB from '../db';
 
 const posts = DB.collection('posts');
 
-const STATUSES = {
+export const STATUSES = {
   NEW: 'new',
   PUBLISHED: 'published',
   REJECTED: 'rejected',
@@ -25,7 +25,7 @@ export const add = ({ body }, onSuccess) => {
     });
 };
 
-export const getAll = (done) => {
+const getPosts = ({ posts, done }) => {
   posts.get().then(({ docs }) => {
     done({
       data: docs.map((doc) => ({
@@ -33,5 +33,16 @@ export const getAll = (done) => {
         id: doc.id,
       })),
     });
+  });
+};
+
+export const getAll = (done) => {
+  getPosts({ posts, done });
+};
+
+export const getByStatus = ({ status, done }) => {
+  getPosts({
+    posts: posts.where('status', '==', status),
+    done,
   });
 };

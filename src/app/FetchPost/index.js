@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAll } from '../../services/post';
+import { getByStatus, STATUSES } from '../../services/post';
 
 export default class FetchPost extends React.Component {
   state = {
@@ -12,11 +12,16 @@ export default class FetchPost extends React.Component {
   }
 
   fetch = () => {
-    getAll(({ data }) => {
+    const onFetch = ({ data }) => {
       this.setState({
         posts: data,
         loading: false,
       });
+    };
+
+    getByStatus({
+      status: STATUSES.PUBLISHED,
+      done: onFetch,
     });
   };
 
