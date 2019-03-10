@@ -3,9 +3,7 @@ import React from 'react';
 const Nav = () => (
   <nav className="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
     <div className="container">
-      <a className="navbar-brand js-scroll-trigger" href="#page-top">
-        Lorem ipsum
-      </a>
+      <a className="navbar-brand js-scroll-trigger" href="#page-top" />
       <button
         className="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
         type="button"

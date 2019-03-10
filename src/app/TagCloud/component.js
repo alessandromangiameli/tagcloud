@@ -7,14 +7,16 @@ import CloudItem from './CloudItem';
 
 const styles = {
   fontFamily: 'Lato',
-  fontSize: 30,
+  fontSize: 10,
   fontWeight: 500,
   color: () =>
     randomColor({
       hue: 'red',
     }),
-  padding: 5,
+  padding: 10,
 };
+
+const fontSizeMapper = (value) => Math.log2(value) * 50;
 
 export default class TagCloudComponent extends React.Component {
   componentDidMount() {
@@ -30,9 +32,19 @@ export default class TagCloudComponent extends React.Component {
         <div className="tag-cloud-container">
           <div className="app-outer">
             <div className="app-inner">
-              <TagCloud className="tag-cloud" style={styles}>
+              <TagCloud
+                className="tag-cloud"
+                style={styles}
+                //rotate={() => Math.round(Math.random()) * 20}
+              >
                 {posts.map(({ word, count }, index) => (
-                  <CloudItem word={word} count={count} key={index} />
+                  <div
+                    style={{
+                      fontSize: fontSizeMapper(count),
+                    }}
+                  >
+                    {word}
+                  </div>
                 ))}
               </TagCloud>
             </div>

@@ -1,28 +1,10 @@
 import React from 'react';
 
-// const styles = {
-//   large: {
-//     fontSize: 60,
-//     fontWeight: 'bold',
-//   },
-//   small: {
-//     opacity: 0.7,
-//     fontSize: 16,
-//   },
-// };
+const fontSizeMapper = (value) => Math.log2(value) * 50;
+const rotate = (word) => word.value % 360;
 
-const CloudItem = (props) => {
-  return (
-    <div {...props} className="tag-item-wrapper">
-      <div
-        style={{
-          fontSize: props.count * 20,
-        }}
-      >
-        {props.word}
-      </div>
-    </div>
-  );
+const CloudItem = ({ word }) => {
+  return <div>{word}</div>;
 };
 
 export default CloudItem;

@@ -19,7 +19,7 @@ const Form = ({ onChange, onSubmit, values, isSubmitting, showForm, toggleForm }
           <div className="container">
             {false && (
               <h2 className="text-center text-uppercase text-secondary mb-0 pb-5">
-                Qui ci andrebbe la domanda
+                Di che cosa parliamo quando parliamo d'amore?
               </h2>
             )}
             <div className="row">

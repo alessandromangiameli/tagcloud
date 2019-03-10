@@ -391,3 +391,8 @@ a:active {
   background-color: #1a252f;
   border-color: #1a252f;
 }
+
+button.bg-primary:focus,
+button.bg-primary:hover {
+  background-color: #dd3d31;
+}

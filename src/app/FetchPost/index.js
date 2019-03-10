@@ -1,5 +1,5 @@
 import React from 'react';
-import { getByStatus, STATUSES } from '../../services/post';
+import { get } from '../../services/cache';
 
 export default class FetchPost extends React.Component {
   state = {
@@ -19,8 +19,7 @@ export default class FetchPost extends React.Component {
       });
     };
 
-    getByStatus({
-      status: STATUSES.PUBLISHED,
+    get({
       done: onFetch,
     });
   };

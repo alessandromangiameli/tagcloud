@@ -8,41 +8,105 @@ export const STATUSES = {
   REJECTED: 'rejected',
 };
 
-export const makePost = ({ body }) => {
+export const makePost = ({ body, status }) => {
   return {
     body,
-    status: STATUSES.NEW,
+    status: status ? status : STATUSES.NEW,
     createdAt: new Date(),
   };
 };
 
-export const add = ({ body }, onSuccess) => {
+export const add = ({ body, status }, onSuccess) => {
   posts
-    .add(makePost({ body }))
+    .add(makePost({ body, status }))
     .then(onSuccess)
     .catch((error) => {
       console.log(error);
     });
 };
 
-const getPosts = ({ posts, done }) => {
-  posts.get().then(({ docs }) => {
-    done({
-      data: docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      })),
+const getPosts = ({ posts, done, limit }) => {
+  posts
+    .limit(limit ? limit : 10 * 10 * 10)
+    .get()
+    .then(({ docs }) => {
+      done({
+        data: docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        })),
+      });
     });
-  });
 };
 
 export const getAll = (done) => {
   getPosts({ posts, done });
 };
 
-export const getByStatus = ({ status, done }) => {
+export const getByStatus = ({ status, ...rest }) => {
   getPosts({
     posts: posts.where('status', '==', status),
-    done,
+    ...rest,
   });
+};
+
+export const wordCount = (posts) => {
+  const lookupTable = {};
+  const toExclude = [
+    'di',
+    'a',
+    'da',
+    'in',
+    'con',
+    'su',
+    'per',
+    'tra',
+    'fra',
+    'il',
+    'lo',
+    'la',
+    'le',
+    'un',
+    'una',
+    'uno',
+    'a',
+    'è',
+    'o',
+    'gli',
+    'non',
+    'amore',
+    "l'amore",
+    'sui',
+    'al',
+    'che',
+    'l’amore',
+    'si',
+    'i',
+    'fa',
+    'ti',
+    'ha',
+    'l’ha',
+    'alle',
+    'nel',
+    'sia',
+  ];
+  posts.forEach(({ body }) => {
+    body
+      .split(/[ '\-\(\)\*":;\[\]|{},.!?]+/)
+      .filter((word) => word.length > 1 && !toExclude.includes(word))
+      .forEach((word) => {
+        word = word.toLowerCase();
+        lookupTable[word] = lookupTable[word] + 1 || 1;
+      });
+  });
+  return Object.keys(lookupTable)
+    .map((key) => {
+      return {
+        word: key,
+        count: lookupTable[key],
+      };
+    })
+    .sort((a, b) => {
+      return b.count - a.count;
+    });
 };
