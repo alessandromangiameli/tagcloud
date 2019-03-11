@@ -18,7 +18,7 @@ const About = () => (
             Ci occorrono le parole per parlare d’amore, e per trovarle attingiamo continuamente agli
             immaginari dell’arte, della letteratura e della musica, fino a far nostre quelle parole.
           </p>
-          <p class="lead">
+          <p className="lead">
             Lo abbiamo fatto anche qui, cominciando con una citazione. E proseguiremo ancora con una
             citazione: di che cosa parliamo quando parliamo d’amore? Aiutaci con una parola, un
             pensiero, una canzone o una poesia, a trovare le parole giuste per costruire insieme la

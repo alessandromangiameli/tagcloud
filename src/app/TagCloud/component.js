@@ -42,6 +42,7 @@ export default class TagCloudComponent extends React.Component {
                     style={{
                       fontSize: fontSizeMapper(count),
                     }}
+                    key={index}
                   >
                     {word}
                   </div>
