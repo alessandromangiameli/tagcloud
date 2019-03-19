@@ -16,7 +16,7 @@ const styles = {
   padding: 10,
 };
 
-const fontSizeMapper = (value) => Math.log2(value) * 50;
+const fontSizeMapper = (value) => Math.log2(value) * 25;
 
 export default class TagCloudComponent extends React.Component {
   componentDidMount() {
@@ -41,6 +41,10 @@ export default class TagCloudComponent extends React.Component {
                   <div
                     style={{
                       fontSize: fontSizeMapper(count),
+                      fontFamily: 'Montserrat',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      opacity: 0.7,
                     }}
                     key={index}
                   >

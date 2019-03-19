@@ -2,62 +2,59 @@ import React, { Fragment } from 'react';
 
 const Footer = () => (
   <Fragment>
-    <footer className="footer text-center">
+    <footer className="footer" id="teatro ">
       <div className="container">
         <div className="row">
-          <div className="col-md-4 mb-5 mb-lg-0">
-            <h4 className="text-uppercase mb-4">Location</h4>
+          <div className="col-md-8 mb-5 mb-lg-0">
+            <h4 className="text-uppercase mb-4">Un Teatro per una comunità</h4>
+
+            <p className="lead">
+              “UN TEATRO PER UNA COMUNITÀ” è il progetto di attivazione della comunità di prossimità
+              del Polo del '900 ideato e organizzato dalla Rete Italiana di Cultura Popolare, che
+              vede la partecipazione di organizzazioni, scuole, famiglie, studenti, singoli
+              cittadini e tessuto produttivo. <br />I dispositivi performativi hanno il compito di
+              praticare azioni di coinvolgimento e ascolto, fino a stimolare l'implementazioni di
+              nuove reti di relazioni in un sistema di partecipazione dal basso. <br />
+              “L'oggetto” culturale assume quindi il significato di una nuova ricerca, dove prendono
+              vita appuntamenti condivisi fino all’ospitalità di quartiere. <br />
+              Grazie anche alla collaborazione con il Convitto Nazionale Umberto I "Un teatro per
+              una comunità" può agire attraverso il meccanismo delle residenze leggere.
+            </p>
             <p className="lead mb-0">
-              2215 John Daniel Drive <br />
-              Clark, MO 65243
+              Il progetto viene realizzato grazie al contributo della Fondazione Polo del '900.
             </p>
           </div>
           <div className="col-md-4 mb-5 mb-lg-0">
-            <h4 className="text-uppercase mb-4">Around the Web</h4>
+            <h4 className="text-uppercase mb-4">Un progetto di</h4>
             <ul className="list-inline mb-0">
               <li className="list-inline-item">
-                <a className="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i className="fab fa-fw fa-facebook-f" />
+                <a className=" btn-social" href="#">
+                  <img src="/images/polo.png" />
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i className="fab fa-fw fa-google-plus-g" />
+                <a className=" btn-social" href="#">
+                  <img src="/images/spaccio.png" />
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i className="fab fa-fw fa-twitter" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a className="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i className="fab fa-fw fa-linkedin-in" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a className="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                  <i className="fab fa-fw fa-dribbble" />
+                <a className=" btn-social" href="#">
+                  <img src="/images/rete.png" />
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="col-md-4">
-            <h4 className="text-uppercase mb-4">About Freelancer</h4>
-            <p className="lead mb-0">
-              Freelance is a free to use, open source Bootstrap theme created by
-              <a href="http://startbootstrap.com">Start Bootstrap</a>.
-            </p>
           </div>
         </div>
       </div>
     </footer>
 
-    <div className="copyright py-4 text-center text-white">
-      <div className="container">
-        <small>Copyright &copy; Your Website 2019</small>
+    {false && (
+      <div className="copyright py-4 text-center text-white">
+        <div className="container">
+          <small>Copyright &copy; Your Website 2019</small>
+        </div>
       </div>
-    </div>
+    )}
   </Fragment>
 );
 

@@ -17,7 +17,7 @@ const Nav = () => (
         <i className="fas fa-bars" />
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
-        <ul className="navbar-nav ml-auto">
+        <ul className="navbar-nav" style={{ marginLeft: '10%' }}>
           <li className="nav-item mx-0 mx-lg-1">
             <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#iniziativa">
               l'iniziativa
@@ -31,6 +31,11 @@ const Nav = () => (
           <li className="nav-item mx-0 mx-lg-1">
             <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#pensiero">
               Lascia il tuo pensiero
+            </a>
+          </li>
+          <li className="nav-item mx-0 mx-lg-1">
+            <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#teatro">
+              Un teatro per una comunità
             </a>
           </li>
         </ul>

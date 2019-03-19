@@ -2,79 +2,82 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 const Form = ({ onChange, onSubmit, values, isSubmitting, showForm, toggleForm }) => (
-  <section id="pensiero">
-    {!showForm && (
-      <div style={{ width: '60%', margin: '0 20%' }} className="pb-5 pt-5">
-        <div className="alert alert-dismissable alert-success fade show" role="alert">
-          <strong>Grazie</strong> per averci detto di che cosa parli quando parli d'amore
-          <button type="button" className="close" aria-label="Close" onClick={toggleForm}>
-            <span aria-hidden="true">&times;</span>
-          </button>
+  <Fragment>
+    <section id="pensiero">
+      {!showForm && (
+        <div style={{ width: '60%', margin: '0 20%' }} className="pb-5 pt-5">
+          <div className="alert alert-dismissable alert-success fade show" role="alert">
+            <strong>Grazie</strong> per averci detto di che cosa parli quando parli d'amore
+            <button type="button" className="close" aria-label="Close" onClick={toggleForm}>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         </div>
-      </div>
-    )}
-    {showForm && (
-      <Fragment>
-        <section id="contact" className="pt-0">
-          <div className="container">
-            {false && (
-              <h2 className="text-center text-uppercase text-secondary mb-0 pb-5">
-                Di che cosa parliamo quando parliamo d'amore?
-              </h2>
-            )}
-            <div className="row">
-              <div className="col-lg-8 mx-auto">
-                <form name="sentMessage" id="contactForm">
-                  <div className="control-group">
-                    <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                      <label />
-                      <textarea
-                        className="form-control"
-                        id="message"
-                        rows="1"
-                        placeholder="Qui dovremmo inserire la domanda da fare"
-                        value={values.body}
-                        onChange={onChange}
-                        name="body"
-                      />
-                      <p className="help-block text-danger" />
-                    </div>
-                  </div>
-
-                  {false && (
+      )}
+      {showForm && (
+        <Fragment>
+          <section id="contact" className="pt-0">
+            <div className="container">
+              {false && (
+                <h2 className="text-center text-uppercase text-secondary mb-0 pb-5">
+                  Di che cosa parliamo quando parliamo d'amore?
+                </h2>
+              )}
+              <div className="row">
+                <div className="col-lg-8 mx-auto">
+                  <form name="sentMessage" id="contactForm">
                     <div className="control-group">
                       <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                        <label>Name</label>
-                        <input
+                        <label />
+                        <textarea
                           className="form-control"
-                          id="name"
-                          type="text"
-                          placeholder="Name"
-                          value={values.name}
+                          id="message"
+                          rows="1"
+                          placeholder="Di che cosa parliamo quando parliamo d'amore?"
+                          value={values.body}
                           onChange={onChange}
+                          name="body"
                         />
                         <p className="help-block text-danger" />
                       </div>
                     </div>
-                  )}
-                  <div className="form-group pt-5">
-                    <button
-                      type="submit"
-                      className="btn btn-primary btn-xl"
-                      onClick={onSubmit}
-                      disabled={isSubmitting || values.body.length < 3}
-                    >
-                      Invia
-                    </button>
-                  </div>
-                </form>
+
+                    {false && (
+                      <div className="control-group">
+                        <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label>Name</label>
+                          <input
+                            className="form-control"
+                            id="name"
+                            type="text"
+                            placeholder="Name"
+                            value={values.name}
+                            onChange={onChange}
+                          />
+                          <p className="help-block text-danger" />
+                        </div>
+                      </div>
+                    )}
+                    <div className="form-group pt-5">
+                      <button
+                        type="submit"
+                        className="btn btn-primary btn-xl"
+                        onClick={onSubmit}
+                        disabled={isSubmitting || values.body.length < 3}
+                      >
+                        Invia
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </Fragment>
-    )}
-  </section>
+          </section>
+        </Fragment>
+      )}
+    </section>
+    <section id="teatro" style={{ padding: 0 }} />
+  </Fragment>
 );
 
 Form.propTypes = {

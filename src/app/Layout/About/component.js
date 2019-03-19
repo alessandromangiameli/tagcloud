@@ -7,7 +7,7 @@ const About = () => (
         A quante cose diamo il nome di amore?
       </h3>
       <div className="row">
-        <div className="col-lg-8 offset-2">
+        <div className="col-lg-8 offset-xl-2">
           <p className="lead">
             Ad un chimico, reso celebre prima da una poesia e poi da una canzone, non è dato di
             capire il gioco attraverso cui gli uomini si combinano e reagiscono tra loro. Quel gioco
